@@ -2,11 +2,33 @@
 
 var players = {};
 var currentVideos = {}; // Almacena la URL actual de cada celda
+var UI_IDLE_TIMEOUT_MS = 5000;
+var idleTimer = null;
 
 // Cargar favoritos al inicio
 document.addEventListener('DOMContentLoaded', function() {
     loadFavorites();
+    setupInactivityUI();
 });
+
+function setupInactivityUI() {
+    function showControlButtons() {
+        document.body.classList.remove('controls-idle');
+    }
+
+    function hideControlButtons() {
+        document.body.classList.add('controls-idle');
+    }
+
+    function resetIdleTimer() {
+        showControlButtons();
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(hideControlButtons, UI_IDLE_TIMEOUT_MS);
+    }
+
+    document.addEventListener('mousemove', resetIdleTimer);
+    resetIdleTimer();
+}
 
 // Carga de la API de Youtube
 function onYouTubeIframeAPIReady() {

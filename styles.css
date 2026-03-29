@@ -163,7 +163,7 @@ iframe {
     z-index: 20;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, opacity 0.2s;
     box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
@@ -291,8 +291,15 @@ iframe {
     display: none;
     z-index: 20;
     font-size: 11px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, opacity 0.2s;
     box-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
+}
+
+/* Mostrar el boton de guardar favorito cuando el video está activo */
+body.controls-idle .close-btn,
+body.controls-idle .save-favorite-btn {
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Hover del boton de guardar favorito */
