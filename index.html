@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor YouTube Multi-View</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Nota: Use HTML puro en lugar de React a pesar de la repetición de las estructuras. Para un proyecto de esta escala, el overhead de React no me parecio justificable. -->
+
+    <div class="grid-container">
+        <!-- CELDA 1 -->
+        <div class="cell" id="cell-1">
+            <div class="form-container" id="form-1">
+                <span class="screen-label">Pantalla 1</span>
+                <div class="input-row">
+                    <input type="text" id="input-1" placeholder="Copie un link de YouTube..." 
+                        class="video-input">
+                    <button onclick="loadVideo(1)" class="enter-btn">ENTRAR</button>
+                </div>
+                <p id="error-1" class="input-error hidden">Link no valido</p>
+                
+                <!-- Favoritos -->
+                <div class="favorites-section">
+                    <div class="favorites-title">Favoritos</div>
+                    <div id="favorites-1" class="favorites-container"></div>
+                </div>
+            </div>
+            <div class="video-wrapper" id="video-wrapper-1"><div id="player-1" class="video-placeholder"></div></div>
+            <button class="save-favorite-btn" id="save-fav-1" onclick="saveFavorite(1)">Guardar</button>
+            <button class="close-btn" id="close-1" onclick="resetCell(1)">✕</button>
+        </div>
+
+        <!-- CELDA 2 -->
+        <div class="cell" id="cell-2">
+            <div class="form-container" id="form-2">
+                <span class="screen-label">Pantalla 2</span>
+                <div class="input-row">
+                    <input type="text" id="input-2" placeholder="Copie un link de YouTube..." 
+                        class="video-input">
+                    <button onclick="loadVideo(2)" class="enter-btn">ENTRAR</button>
+                </div>
+                <p id="error-2" class="input-error hidden">Link no valido</p>
+                
+                <!-- Favoritos -->
+                <div class="favorites-section">
+                    <div class="favorites-title">Favoritos</div>
+                    <div id="favorites-2" class="favorites-container"></div>
+                </div>
+            </div>
+            <div class="video-wrapper" id="video-wrapper-2"><div id="player-2" class="video-placeholder"></div></div>
+            <button class="save-favorite-btn" id="save-fav-2" onclick="saveFavorite(2)">Guardar</button>
+            <button class="close-btn" id="close-2" onclick="resetCell(2)">✕</button>
+        </div>
+
+        <!-- CELDA 3 -->
+        <div class="cell" id="cell-3">
+            <div class="form-container" id="form-3">
+                <span class="screen-label">Pantalla 3</span>
+                <div class="input-row">
+                    <input type="text" id="input-3" placeholder="Copie un link de YouTube..." 
+                        class="video-input">
+                    <button onclick="loadVideo(3)" class="enter-btn">ENTRAR</button>
+                </div>
+                <p id="error-3" class="input-error hidden">Link no valido</p>
+                
+                <!-- Favoritos -->
+                <div class="favorites-section">
+                    <div class="favorites-title">Favoritos</div>
+                    <div id="favorites-3" class="favorites-container"></div>
+                </div>
+            </div>
+            <div class="video-wrapper" id="video-wrapper-3"><div id="player-3" class="video-placeholder"></div></div>
+            <button class="save-favorite-btn" id="save-fav-3" onclick="saveFavorite(3)">Guardar</button>
+            <button class="close-btn" id="close-3" onclick="resetCell(3)">✕</button>
+        </div>
+
+        <!-- CELDA 4 -->
+        <div class="cell" id="cell-4">
+            <div class="form-container" id="form-4">
+                <span class="screen-label">Pantalla 4</span>
+                <div class="input-row">
+                    <input type="text" id="input-4" placeholder="Copie un link de YouTube..." 
+                        class="video-input">
+                    <button onclick="loadVideo(4)" class="enter-btn">ENTRAR</button>
+                </div>
+                <p id="error-4" class="input-error hidden">Link no valido</p>
+                
+                <!-- Favoritos -->
+                <div class="favorites-section">
+                    <div class="favorites-title">Favoritos</div>
+                    <div id="favorites-4" class="favorites-container"></div>
+                </div>
+            </div>
+            <div class="video-wrapper" id="video-wrapper-4"><div id="player-4" class="video-placeholder"></div></div>
+            <button class="save-favorite-btn" id="save-fav-4" onclick="saveFavorite(4)">Guardar</button>
+            <button class="close-btn" id="close-4" onclick="resetCell(4)">✕</button>
+        </div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
